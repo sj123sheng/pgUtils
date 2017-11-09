@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sj.generated.mapper.SongjmTestMapper">
+  <resultMap id="BaseResultMap" type="sj.generated.model.SongjmTest">
+    <id column="col_id" jdbcType="INTEGER" property="colId" />
+    <result column="col_name" jdbcType="VARCHAR" property="colName" />
+    <result column="col_date" jdbcType="TIMESTAMP" property="colDate" />
+  </resultMap>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    SELECT o_tagcode FROM p_songjm_test_delete(#{colId,jdbcType=INTEGER})
+  </delete>
+  
+  <insert id="insert" parameterType="sj.generated.model.SongjmTest">
+    SELECT o_tagcode FROM p_songjm_test_insert(
+        #{colId,jdbcType=INTEGER}, #{colName,jdbcType=VARCHAR}, #{colDate,jdbcType=TIMESTAMP})
+  </insert>
+  
+  <update id="updateByPrimaryKey" parameterType="sj.generated.model.SongjmTest">
+    SELECT o_tagcode FROM p_songjm_test_update(#{colId,jdbcType=INTEGER},#{colId,jdbcType=INTEGER},#{colName,jdbcType=VARCHAR},#{colDate,jdbcType=TIMESTAMP})
+  </update>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select col_id, col_name, col_date
+    from p_songjm_test_get(#{colId,jdbcType=INTEGER})
+  </select>
+</mapper>

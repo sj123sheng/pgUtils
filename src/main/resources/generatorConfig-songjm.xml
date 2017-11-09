@@ -39,17 +39,17 @@
         userId="${database.username}" 
         password="${database.password}" />
 
-    <javaModelGenerator targetPackage="mbg.test.mb3.generated.simple.model" targetProject="src\songjm\java">
+    <javaModelGenerator targetPackage="sj.generated.model" targetProject="src/main/java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
       <!-- <property name="rootClass" value="java.io.Serializable"/> -->
     </javaModelGenerator>
 
-    <sqlMapGenerator targetPackage="mbg.test.mb3.generated.simple.xml"  targetProject="src\songjm\resources">
+    <sqlMapGenerator targetPackage="sj.generated.xml"  targetProject="src/main/resources">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <javaClientGenerator type="XMLMAPPER" targetPackage="mbg.test.mb3.generated.simple.mapper"  targetProject="src\songjm\java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="sj.generated.mapper"  targetProject="src/main/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
