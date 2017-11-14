@@ -9,9 +9,8 @@ RETURNS TEXT AS
 $$
 BEGIN
   UPDATE songjm_test
-  SET col_id = i_colId,
-    col_name = i_colName,
-    col_date = i_colDate
+  SET col_name = coalesce(i_colName, col_name),
+    col_date = coalesce(i_colDate, col_date)
   WHERE col_id = i_colId;
   o_tagcode := '00000000';
 EXCEPTION WHEN OTHERS THEN
