@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sj.generated.mapper.CatchDollRecordMapper">
+  <resultMap id="BaseResultMap" type="sj.generated.model.CatchDollRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="portrait" jdbcType="VARCHAR" property="portrait" />
+    <result column="doll_machine_id" jdbcType="INTEGER" property="dollMachineId" />
+    <result column="doll_machine_name" jdbcType="VARCHAR" property="dollMachineName" />
+    <result column="doll_id" jdbcType="INTEGER" property="dollId" />
+    <result column="doll_name" jdbcType="VARCHAR" property="dollName" />
+    <result column="doll_picture_url" jdbcType="VARCHAR" property="dollPictureUrl" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="exchange_status" jdbcType="INTEGER" property="exchangeStatus" />
+    <result column="exchange_num" jdbcType="INTEGER" property="exchangeNum" />
+    <result column="waybill_number" jdbcType="VARCHAR" property="waybillNumber" />
+    <result column="courier_company" jdbcType="VARCHAR" property="courierCompany" />
+    <result column="consignee" jdbcType="VARCHAR" property="consignee" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="third_record_id" jdbcType="INTEGER" property="thirdRecordId" />
+    <result column="exchange_time" jdbcType="TIMESTAMP" property="exchangeTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="doll_desc" jdbcType="VARCHAR" property="dollDesc" />
+    <result column="delivery_time" jdbcType="TIMESTAMP" property="deliveryTime" />
+    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+  </resultMap>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    SELECT o_tagcode FROM p_catch_doll_record_delete(#{id,jdbcType=INTEGER})
+  </delete>
+  
+  <insert id="insert" parameterType="sj.generated.model.CatchDollRecord">
+    SELECT o_id FROM p_catch_doll_record_insert(
+      
+      
+      
+      
+      
+      
+      
+        #{userId,jdbcType=INTEGER}, #{nickName,jdbcType=VARCHAR}, #{portrait,jdbcType=VARCHAR}, 
+      #{dollMachineId,jdbcType=INTEGER}, #{dollMachineName,jdbcType=VARCHAR}, #{dollId,jdbcType=INTEGER}, 
+      #{dollName,jdbcType=VARCHAR}, #{dollPictureUrl,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{exchangeStatus,jdbcType=INTEGER}, #{exchangeNum,jdbcType=INTEGER}, #{waybillNumber,jdbcType=VARCHAR}, 
+      #{courierCompany,jdbcType=VARCHAR}, #{consignee,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{thirdRecordId,jdbcType=INTEGER}, #{exchangeTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{dollDesc,jdbcType=VARCHAR}, 
+      #{deliveryTime,jdbcType=TIMESTAMP}, #{roomId,jdbcType=INTEGER})
+  </insert>
+  
+  <update id="updateByPrimaryKey" parameterType="sj.generated.model.CatchDollRecord">
+    SELECT o_tagcode FROM p_catch_doll_record_update(#{id,jdbcType=INTEGER},#{userId,jdbcType=INTEGER},#{nickName,jdbcType=VARCHAR},#{portrait,jdbcType=VARCHAR},#{dollMachineId,jdbcType=INTEGER},#{dollMachineName,jdbcType=VARCHAR},#{dollId,jdbcType=INTEGER},#{dollName,jdbcType=VARCHAR},#{dollPictureUrl,jdbcType=VARCHAR},#{status,jdbcType=INTEGER},#{exchangeStatus,jdbcType=INTEGER},#{exchangeNum,jdbcType=INTEGER},#{waybillNumber,jdbcType=VARCHAR},#{courierCompany,jdbcType=VARCHAR},#{consignee,jdbcType=VARCHAR},#{mobile,jdbcType=VARCHAR},#{address,jdbcType=VARCHAR},#{thirdRecordId,jdbcType=INTEGER},#{exchangeTime,jdbcType=TIMESTAMP},#{createTime,jdbcType=TIMESTAMP},#{endTime,jdbcType=TIMESTAMP},#{dollDesc,jdbcType=VARCHAR},#{deliveryTime,jdbcType=TIMESTAMP},#{roomId,jdbcType=INTEGER})
+  </update>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, user_id, nick_name, portrait, doll_machine_id, doll_machine_name, doll_id, 
+    doll_name, doll_picture_url, status, exchange_status, exchange_num, waybill_number, 
+    courier_company, consignee, mobile, address, third_record_id, exchange_time, create_time, 
+    end_time, doll_desc, delivery_time, room_id
+    from p_catch_doll_record_get(#{id,jdbcType=INTEGER})
+  </select>
+</mapper>
