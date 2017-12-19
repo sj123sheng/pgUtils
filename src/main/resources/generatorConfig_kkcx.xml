@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE generatorConfiguration PUBLIC
+ "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <properties resource="database_kkcx.properties"/>
+
+  <context id="simple" targetRuntime="MyBatis3Simple">
+    <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+    <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+    <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+	<commentGenerator>
+	    <property name="suppressAllComments" value="true"/>
+	    <property name="suppressDate" value="true"/>
+	</commentGenerator>
+
+    <jdbcConnection driverClass="${database.driverClassName}"
+        connectionURL="${database.url}"
+        userId="${database.username}" 
+        password="${database.password}" />
+
+    <javaModelGenerator targetPackage="sj.generated.model" targetProject="${project.path}/src/main/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+      <!-- <property name="rootClass" value="java.io.Serializable"/> -->
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="sj.generated.xml"  targetProject="${project.path}/src/main/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="sj.generated.mapper"  targetProject="${project.path}/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+      <!--<table tableName="hist_user_goldcoin_inout">
+          <generatedKey column="histid" sqlStatement="nextval('kkcx.seq_hist_user_goldcoin_inout')" />
+      </table>-->
+      <!--<table tableName="hist_user_lottery_prize_info">
+          <generatedKey column="ulp_id" sqlStatement="nextval('kkcx.seq_hist_user_lottery_prize_info')" />
+      </table>-->
+      <!--<table tableName="dance_music">
+          <generatedKey column="music_id" sqlStatement="nextval('kkcx.dance_music_music_id_seq')" />
+      </table>-->
+      <table tableName="conf_ladder_match">
+          <generatedKey column="season_id" sqlStatement="nextval('kkcx.seq_conf_ladder_match')" />
+      </table>
+
+      <table tableName="res_actor_ladder_match">
+      </table>
+
+      <table tableName="hist_actor_ladder_match">
+          <generatedKey column="ladder_match_record_id" sqlStatement="nextval('kkcx.seq_hist_actor_ladder_match')" />
+      </table>
+
+  </context>
+</generatorConfiguration>

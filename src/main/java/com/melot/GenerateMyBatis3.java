@@ -21,13 +21,14 @@ import java.util.List;
  * ------------------------------------------------------------------
  * 2017/10/30           shengjian     1.0
  */
-public class TestGenerateMyBatis3 {
+public class GenerateMyBatis3 {
 
     @Test()
-    public void testGenerateMyBatis3WithSongjmConfig() throws Exception {
+    public void testGenerateMyBatis3() throws Exception {
         List<String> warnings = new ArrayList<String>();
         ConfigurationParser cp = new ConfigurationParser(warnings);
-        Configuration config = cp.parseConfiguration(this.getClass().getClassLoader().getResourceAsStream("generatorConfig.xml"));
+        //Configuration config = cp.parseConfiguration(this.getClass().getClassLoader().getResourceAsStream("generatorConfig_tshow.xml"));
+        Configuration config = cp.parseConfiguration(this.getClass().getClassLoader().getResourceAsStream("generatorConfig_kkcx.xml"));
 
         DefaultShellCallback shellCallback = new DefaultShellCallback(true);
 
