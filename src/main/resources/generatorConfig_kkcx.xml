@@ -37,15 +37,6 @@
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-      <!--<table tableName="hist_user_goldcoin_inout">
-          <generatedKey column="histid" sqlStatement="nextval('kkcx.seq_hist_user_goldcoin_inout')" />
-      </table>-->
-      <!--<table tableName="hist_user_lottery_prize_info">
-          <generatedKey column="ulp_id" sqlStatement="nextval('kkcx.seq_hist_user_lottery_prize_info')" />
-      </table>-->
-      <!--<table tableName="dance_music">
-          <generatedKey column="music_id" sqlStatement="nextval('kkcx.dance_music_music_id_seq')" />
-      </table>-->
       <table tableName="conf_ladder_match">
           <generatedKey column="season_id" sqlStatement="nextval('kkcx.seq_conf_ladder_match')" />
       </table>
